@@ -1,0 +1,25 @@
+spring:
+  ai:
+    dashscope:
+      api-key: ${DASHSCOPE_API_KEY}
+      chat:
+        options:
+          model: qwen3.5-plus-2026-02-15
+    mcp:
+      client:
+        stdio:
+          servers:
+            filesystem:
+              command: npx
+              args:
+                - -y
+                - "@modelcontextprotocol/server-filesystem"
+                - /tmp
+
+
+
+logging:
+  level:
+    root: info
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
